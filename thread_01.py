@@ -1,4 +1,7 @@
-'''在创建local对象时，同时在线程对象的属性字典__dict__里面保存了local对象的属性字典，然后每次访问加锁，将线程对象保存的local对象的__dict__属性，载入local中。
+'''
+在创建local对象时，同时在线程对象的属性字典__dict__里面保存了local对象的
+属性字典，然后每次访问加锁，将线程对象保存的local对象的__dict__属性，载入
+local中。
 '''
 class _localbase(object):
     __slots__ = '_local__key', '_local__args', '_local__lock'
